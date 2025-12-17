@@ -22,8 +22,13 @@ An interactive trivia quiz that tests the user's knowledge of current video game
 ## How to Play
 1. Enter your name to begin (make sure it only contains valid alphabetical characters, otherwise you will be met with an error message)
 2. Answer all 5 questions (if you don't answer all 5 you will be met with an alert message that you can either heed to or ignore)
-3. Click the submit button located at the bottom of the webpage past question 5
+3. Click the submit quiz button located at the bottom of the webpage past question 5
 4. View your score and click continue to play the game again
+
+## Installation
+1. Clone the repository
+2. Open 'index.html' in your browser (or via live server if you use VSCode)
+3. Start playing!
 
 
 
