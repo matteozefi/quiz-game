@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Quiz Project</title>
+    <link rel="stylesheet" href="FINAL-QUIZ-GAME-PROJECT.css">
+</head>
+<body>
+    <header>
+        <div id="first-image-container" class="image-container">
+            <img class="logo-image" src="images/Nintendo-logo.png" alt="nintendo logo">
+            <img class="logo-image" src="images/Playstation-logo.png" alt="playstation logo">
+            <img class="logo-image" src="images/Xbox-logo.png" alt="xbox logo">
+        </div>
+        <div id="title-group">
+            <h1 id="main-title">Welcome to My Quiz Game!</h1>
+            <p id="description">How much do you really know about video games?</p>
+        </div>
+        <div id="second-image-container" class="image-container">
+            <img class="logo-image" src="images/Steam-logo.png" alt="steam logo">
+            <img class="logo-image" src="images/EpicGames-logo.png" alt="epic games logo">
+            <img class="logo-image" src="images/RiotGames-logo.png" alt="riot games logo">
+        </div>
+    </header>
+    <main>
+        <div id="modal-container">
+            <div id="modal">
+                <h2 id="modal-title">Get Ready!</h2>
+                <p id="modal-text">Enter your name in order to start the quiz.</p>
+                <input type="text" id="username-input" placeholder="Enter your name here">
+                <p id="error-message">Please enter your name.</p>
+                <button id="start-button">Start Quiz</button>
+            </div>
+        </div>
+        <p id="welcome-message"></p>
+        <div id="quiz-container">
+            <div id="question-one" class="question-block">
+                <h3 class="question-title">Question 1</h3>
+                <p class="question">Which video game won Game of the Year at the 2024 Game Awards?</p>
+                <div class="answer-options">
+                    <div class="option1">
+                        <input type="radio" name="answer-one" id="option1q1" value="Final Fantasy VII Rebirth">
+                        <label for="option1q1">Final Fantasy VII Rebirth</label>
+                    </div>
+                    <div class="option2">
+                        <input type="radio" name="answer-one" id="option2q1" value="Metaphor: ReFantazio">
+                        <label for="option2q1">Metaphor: ReFantazio</label>
+                    </div>
+                    <div class="option3">
+                        <input type="radio" name="answer-one" id="option3q1" value="Black Myth: Wukong">
+                        <label for="option3q1">Black Myth: Wukong</label>
+                    </div>
+                    <div class="option4">
+                        <input type="radio" name="answer-one" id="option4q1" value="Astro Bot">
+                        <label for="option4q1">Astro Bot</label>
+                    </div>
+                </div>
+            </div>
+            <div id="question-two" class="question-block">
+                <h3 class="question-title">Question 2</h3>
+                <p class="question">Which of these titles was the best selling Nintendo Switch game during the console's lifetime?</p>
+                <div class="answer-options">
+                    <div class="option1">
+                        <input type="radio" name="answer-two" id="option1q2" value="Mario Kart 8 Deluxe">
+                        <label for="option1q2">Mario Kart 8 Deluxe</label>
+                    </div>
+                    <div class="option2">
+                        <input type="radio" name="answer-two" id="option2q2" value="Animal Crossing: New Horizons">
+                        <label for="option2q2">Animal Crossing: New Horizons</label>
+                    </div>
+                    <div class="option3">
+                        <input type="radio" name="answer-two" id="option3q2" value="The Legend of Zelda: Breath of the Wild">
+                        <label for="option3q2">The Legend of Zelda: Breath of the Wild</label>
+                    </div>
+                    <div class="option4">
+                        <input type="radio" name="answer-two" id="option4q2" value="Super Smash Bros. Ultimate">
+                        <label for="option4q2">Super Smash Bros. Ultimate</label>
+                    </div>
+                </div>
+            </div>
+            <div id="question-three" class="question-block">
+                <h3 class="question-title">Question 3</h3>
+                <p class="question">What is the best selling Playstation exclusive IP of all time?</p>
+                <div class="answer-options">
+                    <div class="option1">
+                        <input type="radio" name="answer-three" id="option1q3" value="The Last of Us">
+                        <label for="option1q3">The Last of Us</label>
+                    </div>
+                    <div class="option2">
+                        <input type="radio" name="answer-three" id="option2q3" value="God of War">
+                        <label for="option2q3">God of War</label>
+                    </div>
+                    <div class="option3">
+                        <input type="radio" name="answer-three" id="option3q3" value="Gran Turismo">
+                        <label for="option3q3">Gran Turismo</label>
+                    </div>
+                    <div class="option4">
+                        <input type="radio" name="answer-three" id="option4q3" value="Uncharted">
+                        <label for="option4q3">Uncharted</label>
+                    </div>
+                </div>
+            </div>
+            <div id="question-four" class="question-block">
+                <h3 class="question-title">Question 4</h3>
+                <p class="question">What is the highest rated game on Metacritic of all time?</p>
+                <div class="answer-options">
+                    <div class="option1">
+                        <input type="radio" name="answer-four" id="option1q4" value="Super Mario Galaxy">
+                        <label for="option1q4">Super Mario Galaxy</label>
+                    </div>
+                    <div class="option2">
+                        <input type="radio" name="answer-four" id="option2q4" value="The Legend of Zelda: Ocarina of Time">
+                        <label for="option2q4">The Legend of Zelda: Ocarina of Time</label>
+                    </div>
+                    <div class="option3">
+                        <input type="radio" name="answer-four" id="option3q4" value="Grand Theft Auto V">
+                        <label for="option3q4">Grand Theft Auto V</label>
+                    </div>
+                    <div class="option4">
+                        <input type="radio" name="answer-four" id="option4q4" value="Red Dead Redemption II">
+                        <label for="option4q4">Red Dead Redemption II</label>
+                    </div>
+                </div>
+            </div>
+            <div id="question-five" class="question-block">
+                <h3 class="question-title">Question 5</h3>
+                <p class="question">What is the best selling video game console of all time?</p>
+                <div class="answer-options">
+                    <div class="option1">
+                        <input type="radio" name="answer-five" id="option1q5" value="PlayStation 2">
+                        <label for="option1q5">PlayStation 2</label>
+                    </div>
+                    <div class="option2">
+                        <input type="radio" name="answer-five" id="option2q5" value="Nintendo Switch">
+                        <label for="option2q5">Nintendo Switch</label>
+                    </div>
+                    <div class="option3">
+                        <input type="radio" name="answer-five" id="option3q5" value="Playstation 4">
+                        <label for="option3q5">Playstation 4</label>
+                    </div>
+                    <div class="option4">
+                        <input type="radio" name="answer-five" id="option4q5" value="Xbox 360">
+                        <label for="option4q5">Xbox 360</label>
+                    </div>
+                </div>
+            </div>
+            <button id="submit-button">Submit Quiz</button>
+            <div id="final-modal-container">
+                <div id="final-modal">
+                    <h2 id="final-message"></h2>
+                    <p id="final-score"></p>
+                    <button id="continue-button">Continue</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <p id="copyright">Created By Matteo Zefi | &copy; 2025</p>
+    </footer>
+    <script src="FINAL-QUIZ-GAME-PROJECT.js"></script>
+</body>
+</html>

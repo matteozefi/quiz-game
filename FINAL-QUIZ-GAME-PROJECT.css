@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background blur effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/Quiz-Game-Background-Final.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: blur(7px);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Header & Footer - consolidated shared styles */
+header,
+footer {
+    padding: 40px;
+    background-color: white;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    margin-top: -20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* Logo images */
+.image-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.logo-image {
+    width: 220px;
+    height: auto;
+    padding: 0 40px;
+}
+
+/* Title and description - shared hover effects */
+#main-title,
+#description {
+    text-align: center;
+    transition: transform 150ms ease;
+}
+
+#main-title {
+    color: #333;
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+#main-title:hover {
+    transform: scale(1.02);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+}
+
+#description {
+    color: #555;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: transform 150ms ease, color 150ms ease;
+}
+
+#description:hover {
+    color: #333;
+    transform: scale(1.02);
+}
+
+/* Modal containers - consolidated shared styles */
+#modal-container,
+#final-modal-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: opacity 200ms ease, visibility 200ms ease;
+}
+
+#modal-container {
+    gap: 10rem;
+}
+
+#final-modal-container {
+    display: none;
+}
+
+.hidden,
+#modal-container.hidden,
+#final-modal-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Modal boxes - consolidated shared styles */
+#modal,
+#final-modal {
+    background: rgba(255,255,255,0.98);
+    padding: 24px;
+    border-radius: 10px;
+    max-width: 520px;
+    width: calc(100% - 48px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+#final-modal {
+    display: block;
+}
+
+#modal h2,
+#final-modal h2 {
+    margin-bottom: 18px;
+}
+
+#modal p,
+#final-modal p {
+    margin-bottom: 16px;
+    color: #333;
+}
+
+/* Username input */
+#username-input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+#username-input:hover {
+    border-color: #2b7cff;
+    box-shadow: 0 0 8px rgba(43, 124, 255, 0.6);
+}
+
+#username-input:active {
+    border-color: #1a5edb;
+    box-shadow: 0 0 12px rgba(26, 94, 219, 0.8);
+}
+
+/* Error message */
+#modal #error-message {
+    color: #e53935;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    margin-top: 2px;
+    display: none;
+}
+
+/* Buttons - consolidated shared styles */
+#start-button,
+#submit-button,
+#continue-button {
+    background-color: #2b7cff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 150ms ease, transform 150ms ease;
+}
+
+#start-button,
+#continue-button {
+    padding: 10px 18px;
+}
+
+#submit-button {
+    padding: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#continue-button {
+    display: block;
+    margin: 0 auto;
+}
+
+#start-button:hover,
+#submit-button:hover,
+#continue-button:hover {
+    transform: scale(1.02);
+}
+
+#start-button:active,
+#submit-button:active,
+#continue-button:active {
+    transform: translateY(1px);
+    background-color: #1a5edb;
+}
+
+/* Welcome message */
+#welcome-message {
+    text-align: center;
+    color: white;
+    font-size: 1.75rem;
+    margin-top: 2.0rem;
+    margin-bottom: -1.5rem;
+    text-shadow: 1px 1px 2px black;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    display: none;
+    border-radius: 5px;
+    transition: background-color 150ms ease, transform 150ms ease;
+}
+
+#welcome-message:hover {
+    transform: scale(1.02);
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Main content */
+main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+}
+
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+}
+
+/* Question blocks */
+.question-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 70px;
+    border: 3px solid black;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.answer-options {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Question title and text - shared hover effects */
+.question-title,
+.question {
+    transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.question-title {
+    font-size: 2.0rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.question {
+    font-size: 1.5rem;
+    padding: 12px 16px;
+}
+
+.question-title:hover,
+.question:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.02);
+}
+
+/* Answer options - consolidated */
+.option1,
+.option2,
+.option3,
+.option4 {
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    padding: 12px 16px;
+    transition: background-color 150ms ease, transform 150ms ease;
+    font-size: 1.2rem;
+}
+
+.option1:hover,
+.option2:hover,
+.option3:hover,
+.option4:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.02);
+}
+
+/* Copyright */
+#copyright {
+    font-size: 0.9rem;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
