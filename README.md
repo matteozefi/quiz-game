@@ -14,6 +14,13 @@ An interactive trivia quiz that tests the user's knowledge of current video game
 - Personalized feedback based on performance
 - Modal based UI with smooth transitions
 
+## Tech Stack
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+## How to Play
+1. Enter your name to begin (make sure it only contains valid alphabetical characters, otherwise you will be met with an error message)
 
 
 
